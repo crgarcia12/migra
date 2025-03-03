@@ -15,7 +15,7 @@ import { Iconify } from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
-export type UserProps = {
+export type ApplicationProps = {
   id: string;
   name: string;
   role: string;
@@ -25,13 +25,13 @@ export type UserProps = {
   isVerified: boolean;
 };
 
-type UserTableRowProps = {
-  row: UserProps;
+type ApplicationTableRowProps = {
+  row: ApplicationProps;
   selected: boolean;
   onSelectRow: () => void;
 };
 
-export function UserTableRow({ row, selected, onSelectRow }: UserTableRowProps) {
+export function ApplicationTableRow({ row, selected, onSelectRow }: ApplicationTableRowProps) {
   const [openPopover, setOpenPopover] = useState<HTMLButtonElement | null>(null);
 
   const handleOpenPopover = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
@@ -55,10 +55,6 @@ export function UserTableRow({ row, selected, onSelectRow }: UserTableRowProps) 
             {row.name}
           </Box>
         </TableCell>
-
-        <TableCell>{row.company}</TableCell>
-
-        <TableCell>{row.role}</TableCell>
 
         <TableCell align="center">
           {row.isVerified ? (

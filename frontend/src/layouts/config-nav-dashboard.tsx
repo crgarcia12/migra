@@ -9,6 +9,11 @@ const icon = (name: string) => (
 
 export const navData = [
   {
+    title: 'Application',
+    path: '/application',
+    icon: icon('ic-user'),
+  },
+  {
     title: 'Dashboard',
     path: '/',
     icon: icon('ic-analytics'),
