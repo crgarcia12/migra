@@ -1,4 +1,6 @@
 import {
+  _applicationName,
+
   _id,
   _price,
   _times,
@@ -14,33 +16,22 @@ import {
 // ----------------------------------------------------------------------
 
 export const _myAccount = {
-  displayName: 'Jaydon Frankie',
-  email: 'demo@minimals.cc',
+  displayName: 'Carlos Garcia',
+  email: 'carlos@carlos.carlos',
   photoURL: '/assets/images/avatar/avatar-25.webp',
 };
 
 // ----------------------------------------------------------------------
 
-export const _applications = [...Array(24)].map((_, index) => ({
+export const _applications = [...Array(15)].map((_, index) => ({
   id: _id(index),
-  name: _fullName(index),
-  company: _company(index),
-  isVerified: _boolean(index),
-  avatarUrl: `/assets/images/avatar/avatar-${index + 1}.webp`,
-  status: index % 4 ? 'active' : 'banned',
-  role:
-    [
-      'sdfg',
-      'sdfg Manager',
-      'UI sdfg',
-      'UX sdfg',
-      'UI/UX Designer',
-      'sdfg sdfg',
-      'Backend Developer',
-      'Full sdfg Designer',
-      'Front sdfg Developer',
-      'Full Stack Developer',
-    ][index] || 'UI Designer',
+  name: _applicationName(index),
+  priority: index * 10 + 10,
+  state: index % 7 ? 'not started' : 'started',
+  sail: '2/2',
+  leverage: '1/1',
+  assignedTo: _fullName(index),
+  avatarUrl: `/assets/images/avatar/avatar-${index + 1}.webp`
 }));
 
 // ----------------------------------------------------------------------

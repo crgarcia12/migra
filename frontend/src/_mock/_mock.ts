@@ -57,6 +57,25 @@ export const _fullName = (index: number) =>
     'Willis Ankunding',
   ][index];
 
+  export const _applicationName = (index: number) =>
+    [
+      'Application 1',
+      'Application 2',
+      'Application 3',
+      'Application 4',
+      'Application 5',
+      'Application 6',
+      'Application 7',
+      'Application 8',
+      'Application 9',
+      'Application 10',
+      'Application 11',
+      'Application 12',
+      'Application 13',
+      'Application 14',
+      'Application 15',
+    ][index];
+
 export const _price = (index: number) =>
   [
     35.17, 57.22, 64.78, 50.79, 9.57, 61.46, 96.73, 63.04, 33.18, 36.3, 54.42, 20.52, 62.82, 19.96,

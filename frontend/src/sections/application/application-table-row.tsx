@@ -17,12 +17,12 @@ import { Iconify } from 'src/components/iconify';
 
 export type ApplicationProps = {
   id: string;
+  priority: number;
   name: string;
-  role: string;
-  status: string;
-  company: string;
+  state: string;
+  sail: string;
+  leverage: string;
   avatarUrl: string;
-  isVerified: boolean;
 };
 
 type ApplicationTableRowProps = {
@@ -45,10 +45,13 @@ export function ApplicationTableRow({ row, selected, onSelectRow }: ApplicationT
   return (
     <>
       <TableRow hover tabIndex={-1} role="checkbox" selected={selected}>
+        
+        {/* Select CheckBox */}
         <TableCell padding="checkbox">
           <Checkbox disableRipple checked={selected} onChange={onSelectRow} />
         </TableCell>
 
+        {/* Name */}
         <TableCell component="th" scope="row">
           <Box gap={2} display="flex" alignItems="center">
             <Avatar alt={row.name} src={row.avatarUrl} />
@@ -56,18 +59,35 @@ export function ApplicationTableRow({ row, selected, onSelectRow }: ApplicationT
           </Box>
         </TableCell>
 
-        <TableCell align="center">
-          {row.isVerified ? (
-            <Iconify width={22} icon="solar:check-circle-bold" sx={{ color: 'success.main' }} />
-          ) : (
-            '-'
-          )}
-        </TableCell>
-
+        {/* Priority */}
         <TableCell>
-          <Label color={(row.status === 'banned' && 'error') || 'success'}>{row.status}</Label>
+            {row.priority}
         </TableCell>
 
+        {/* State */}
+        <TableCell>
+          <Label color={(row.state === 'started' && 'success') || 'error'}>{row.state}</Label>
+        </TableCell>
+
+        {/* Sail */}
+        <TableCell align="center">
+          {row.sail}
+        </TableCell>
+
+        {/* Leverage */}
+        <TableCell align="center">
+          {row.leverage}
+        </TableCell>
+
+        {/* Assigned To */}
+        <TableCell align="center">
+          <Box gap={2} display="flex" alignItems="center">
+            <Avatar alt={row.assigned} src={row.avatarUrl} />
+            {row.assignedTo}
+          </Box>
+        </TableCell>
+
+        {/* Context Menu */}
         <TableCell align="right">
           <IconButton onClick={handleOpenPopover}>
             <Iconify icon="eva:more-vertical-fill" />
