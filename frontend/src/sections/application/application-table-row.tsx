@@ -54,7 +54,6 @@ export function ApplicationTableRow({ row, selected, onSelectRow }: ApplicationT
         {/* Name */}
         <TableCell component="th" scope="row">
           <Box gap={2} display="flex" alignItems="center">
-            <Avatar alt={row.name} src={row.avatarUrl} />
             {row.name}
           </Box>
         </TableCell>
