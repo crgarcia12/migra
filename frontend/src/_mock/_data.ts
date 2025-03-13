@@ -27,9 +27,12 @@ export const _applications = [...Array(15)].map((_, index) => ({
   id: _id(index),
   name: _applicationName(index),
   priority: index * 10 + 10,
+  size: 10250,
   state: index % 7 ? 'not started' : 'started',
-  sail: '2/2',
-  leverage: '1/1',
+  sailToDo: 3,
+  sailDone: 2,
+  leverageToDo: 5,
+  leverageDone: 1,
   assignedTo: _fullName(index),
   avatarUrl: `/assets/images/avatar/avatar-${index + 1}.webp`
 }));

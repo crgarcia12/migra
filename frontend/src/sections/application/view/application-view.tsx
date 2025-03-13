@@ -82,6 +82,7 @@ export function ApplicationView() {
                 headLabel={[
                   { id: 'name', label: 'Name' },
                   { id: 'priority', label: 'Priority' },
+                  { id: 'size', label: 'Size (USD)' },
                   { id: 'state', label: 'State' },
                   { id: 'sail', label: 'Sail', align: 'center' },
                   { id: 'leverage', label: 'Leverage', align: 'center' },
