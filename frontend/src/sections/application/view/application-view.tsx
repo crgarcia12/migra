@@ -81,8 +81,11 @@ export function ApplicationView() {
                 }
                 headLabel={[
                   { id: 'name', label: 'Name' },
-                  { id: 'isVerified', label: 'Verified', align: 'center' },
-                  { id: 'status', label: 'Status' },
+                  { id: 'priority', label: 'Priority' },
+                  { id: 'state', label: 'State' },
+                  { id: 'sail', label: 'Sail', align: 'center' },
+                  { id: 'leverage', label: 'Leverage', align: 'center' },
+                  { id: 'assignedTo', label: 'Assigned To', align: 'left' },
                   { id: '' },
                 ]}
               />
