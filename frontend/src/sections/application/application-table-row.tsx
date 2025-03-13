@@ -23,6 +23,7 @@ export type ApplicationProps = {
   sail: string;
   leverage: string;
   avatarUrl: string;
+  assignedTo: string;
 };
 
 type ApplicationTableRowProps = {
@@ -81,7 +82,7 @@ export function ApplicationTableRow({ row, selected, onSelectRow }: ApplicationT
         {/* Assigned To */}
         <TableCell align="center">
           <Box gap={2} display="flex" alignItems="center">
-            <Avatar alt={row.assigned} src={row.avatarUrl} />
+            <Avatar alt={row.assignedTo} src={row.avatarUrl} />
             {row.assignedTo}
           </Box>
         </TableCell>
