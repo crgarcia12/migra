@@ -9,9 +9,15 @@ import MenuList from '@mui/material/MenuList';
 import TableCell from '@mui/material/TableCell';
 import IconButton from '@mui/material/IconButton';
 import MenuItem, { menuItemClasses } from '@mui/material/MenuItem';
+import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 
 import { Label } from 'src/components/label';
 import { Iconify } from 'src/components/iconify';
+
+function normalise(value: number): number {
+  return value * 100;
+}
+
 
 // ----------------------------------------------------------------------
 
@@ -20,9 +26,12 @@ export type ApplicationProps = {
   priority: number;
   name: string;
   state: string;
-  sail: string;
-  leverage: string;
+  sailToDo: number;
+  sailDone: number;
+  leverageToDo: number;
+  leverageDone: number;
   avatarUrl: string;
+  size: number;
   assignedTo: string;
 };
 
@@ -64,6 +73,11 @@ export function ApplicationTableRow({ row, selected, onSelectRow }: ApplicationT
             {row.priority}
         </TableCell>
 
+        {/* Size */}
+        <TableCell>
+            {row.size}
+        </TableCell>
+
         {/* State */}
         <TableCell>
           <Label color={(row.state === 'started' && 'success') || 'error'}>{row.state}</Label>
@@ -71,12 +85,14 @@ export function ApplicationTableRow({ row, selected, onSelectRow }: ApplicationT
 
         {/* Sail */}
         <TableCell align="center">
-          {row.sail}
+          <LinearProgress variant="determinate" value={normalise(row.sailDone/row.sailToDo)} />
+          {row.sailDone}/{row.sailToDo}
         </TableCell>
 
         {/* Leverage */}
         <TableCell align="center">
-          {row.leverage}
+          <LinearProgress variant="determinate" value={normalise(row.leverageDone/row.leverageToDo)} />
+          {row.leverageDone}/{row.leverageToDo}
         </TableCell>
 
         {/* Assigned To */}
